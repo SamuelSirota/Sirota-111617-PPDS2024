@@ -20,7 +20,12 @@ class Shared:
 
 
 def person(shared, tid):
-    """This function simulates a person's morning routine."""
+    """This function simulates a person's morning routine.
+    
+    It demonstrates sleeping, morning hygiene, eating breakfast,
+    receiving a call and calling someone.
+    Fero can only eat breakfast after Jano calls him.
+    """
     if tid == 0:
         name = "Jano"
     elif tid == 1:
@@ -64,9 +69,16 @@ def call_him(name):
     print("  " + name + " is calling Fero!")
 
 
-if __name__ == "__main__":
+def main():
+    """This function uses semaphores to solve the 'Who had breakfast
+    first' problem.
+    """
     n_threads = 2
     semaphore = Semaphore(0)
     shared = Shared(semaphore)
     threads = [Thread(person, shared, i) for i in range(n_threads)]
     [t.join() for t in threads]
+
+
+if __name__ == "__main__":
+    main()

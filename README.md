@@ -8,4 +8,5 @@
 My solutions to Parallel Programming and Distributed Systems (PPDS) tasks at the Slovak University of Technology (STU) in Bratislava.
 
 
-1. Who had breakfast first problem - [branch 01](https://github.com/SamuelSirota/Sirota-111617-PPDS2024/tree/01)
+1. Who had breakfast first problem. - [branch 01](https://github.com/SamuelSirota/Sirota-111617-PPDS2024/tree/01)
+2. The dining savages problem. - [branch 02](https://github.com/SamuelSirota/Sirota-111617-PPDS2024/tree/02)

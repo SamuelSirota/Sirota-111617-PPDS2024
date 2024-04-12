@@ -1,4 +1,4 @@
-# Assignment 04 - Parallel samplesort for Numba CUDA
+# Assignment 05 - Parallel samplesort for Numba CUDA
 
 [![Python 3.10.12](https://img.shields.io/badge/python-3.10.12-purple.svg)](https://www.python.org/downloads/release/python-31012/)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-purple.svg)](https://conventionalcommits.org)
@@ -6,7 +6,7 @@
 
 ## Description
 
-This is a simple Python program that uses python library numba cuda to sort lists of numbers. The program is using the CUDA Toolkit 12.4  run the program in parallel on GPU.
+This is a simple Python program that uses python library numba and cuda to sort lists of numbers. The program is using the CUDA Toolkit 12.4  run the program in parallel on GPU.
 
 ---
 
@@ -32,9 +32,9 @@ My implementation has few components:
 
 ### Serial sort algorithm
 
-As a serial sort algorithm I choose insertion sort. It is simple and good for small arrays. 
+As a serial sort algorithm I choose insertion sort. It is simple and good for small arrays.
 It doesnt use recursion and it is stable. It has time complexity O(n^2) and space complexity O(1).
-I didnt need to change much for it to work as cuda kernel. 
+I didnt need to change much for it to work as cuda kernel.
 I just added `@cuda.jit` and I use  `cuda.to_device(np.array(S))` to make it work on GPU.
 Also I had to change the way I was returning the array. I use `data.copy_to_host()` to return the sorted array.
 As parameters I used block per grid as 1 because I had issues with it. The resulting array had different values than the input array.
@@ -42,14 +42,14 @@ Number of threads per block I choose 32 as it is not too small and i can be scal
 
 ### Parallel samplesort algorithm
 
-#### Function Parameters:
+#### Function Parameters
 
 - `A`: The input array to be sorted.
-- `k`: Oversampling factor for load balancing 
+- `k`: Oversampling factor for load balancing
 - `p`: The number of spliters to be used.
 - `threshold`: A threshold value to determine when to switch to a different sorting algorithm (in this case, insertion sort).
 
-#### Code has 4 main parts:
+#### Code has 4 main parts
 
 1. Check if the input array is small enough to use insertion sort. In case it is, it uses insertion sort.
 2. Randomly select samples from the input array, sort them, and use them as splitters to divide the input data into buckets.
@@ -69,13 +69,4 @@ From smallest to the largest array size I used 100, 2000, 2500, 15000 and 100 00
 | 15 000       | 0.6910 s | 017.3968 s |
 | 100 000      | 2.1158 s | 902.9224 s|
 
-Array length: 100000
-Time to sort parallel: 2.1158618 s
-Time to sort serial: 902.9224811 s
-
 The results are as expected. In smaller arrays of size 100, the parallel version is slower than the serial version. This is because of the overhead of using the GPU. However, as the array size increases, the parallel version becomes faster than the serial version. This happens between array sizes of 2000 and 2500. The parallel version is significantly faster than the serial version for larger arrays of size 15000. For curiosity I tested the algorithm on array of size 100 000 and the parallel version is 400+ times faster than the serial version.
-
-
-
-
-

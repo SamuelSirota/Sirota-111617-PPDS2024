@@ -9,3 +9,4 @@ My solutions to Parallel Programming and Distributed Systems (PPDS) tasks at the
 2. The dining savages problem. - [branch 02](https://github.com/SamuelSirota/Sirota-111617-PPDS2024/tree/02)
 3. The Roller Coaster problem. - [branch 03](https://github.com/SamuelSirota/Sirota-111617-PPDS2024/tree/03)
 4. Parallel matrix multiplication. - [branch 04](https://github.com/SamuelSirota/Sirota-111617-PPDS2024/tree/04)
+5. Parallel samplesort algorithm. - [branch 05](https://github.com/SamuelSirota/Sirota-111617-PPDS2024/tree/05)

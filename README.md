@@ -2,7 +2,6 @@
 
 [![Python 3.10.12](https://img.shields.io/badge/python-3.10.12-purple.svg)](https://www.python.org/downloads/release/python-31012/)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-purple.svg)](https://conventionalcommits.org)
-[![Static Badge](https://img.shields.io/badge/CUDA_Toolkit-12.4-purple)](https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local)
 
 ## Description
 

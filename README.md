@@ -5,7 +5,8 @@
 
 ## Description
 
-This is a simple Python program which implements simple scheduler for coprograms based on enhanced generators.
+This is a simple Python program which implements simple scheduler
+for coprograms based on enhanced generators.
 
 ---
 
@@ -15,12 +16,14 @@ Before running the script, make sure you have Python 3.10.12 installed.
 
 ## Assignment
 
-1. Implement simple scheduler for coprograms based on enhanced generators.
-2. Scheduler should be able to run multiple coprograms round-robin style.
-3. Scheduler should implement `add_job` method to add new coprogram to the scheduler.
-4. Scheduler should also implement `start` method to run all coprograms.
-5. Scheduler should respond to `StopIteration` exception and remove coprogram from the scheduler and print the message.
-6. Prepare a sample program to demonstrate the scheduler implementing at least 3 coprograms, also 1 of them should end in finite time.
+1. Implement scheduler for coprograms based on enhanced generators.
+2. Scheduler should run multiple coprograms round-robin style.
+3. Implement `add_job` method to add new coprogram to the scheduler.
+4. Also implement `start` method to run all coprograms.
+5. Scheduler should respond to `StopIteration` exception and remove
+coprogram from the scheduler and print the message.
+6. Prepare a sample program to demonstrate the scheduler implementing
+at least 3 coprograms, also 1 of them should end in finite time.
 
 ## Implementation
 
@@ -32,10 +35,12 @@ My implementation has few components:
 
 ### Scheduler class
 
-My implementation of the scheduler class has one internal property `jobs` which is a list of tuples containing the coroutine and its color.
+My implementation of the scheduler class has one internal property `jobs`
+which is a list of tuples containing the coroutine and its color.
 It has 3 methods:
 
-- `add_job` to add a coroutine to the scheduler, it also assigns a color to the coroutine
+- `add_job` to add a coroutine to the scheduler, it also assigns a color
+to the coroutine
 - `start` to start the scheduler and run the coroutines round-robin style
 - `_execute_coprogram` to execute each coroutine and handle exceptions
 
@@ -43,14 +48,21 @@ It has 3 methods:
 
 I have implemented 4 coprogram functions:
 
-- `coprogram`: This coprogram prints the specified message and yields the control back to the scheduler and repeats specified number of times
-- `fib`: This coprogram prints the fibonacci series number and yields the control back to the scheduler and repeats specified number of times
-- `prime_numbers`: This coprogram prints the prime numbers and yields the control back to the scheduler and repeats up to specified limit
-- `play_game`: This coprogram implements a simple rock-paper-scissors game and yields the control back to the scheduler it runs infinitely or until user wants to stop, this coroutine needs user input
+- `coprogram`: This coprogram prints the specified message and yields
+the control back to the scheduler and repeats specified number of times
+- `fib`: This coprogram prints the fibonacci series number and yields
+the control back to the scheduler and repeats specified number of times
+- `prime_numbers`: This coprogram prints the prime numbers and yields
+the control back to the scheduler and repeats up to specified limit
+- `play_game`: This coprogram implements a simple rock-paper-scissors
+game and yields the control back to the scheduler it runs infinitely or
+until user wants to stop, this coroutine needs user input
 
 ### Main function with sample program
 
-I have created an instance of the scheduler and added 4 coprogram functions to it. Then I started the scheduler. The scheduler will run all the coprogram functions round-robin style.
+I have created an instance of the scheduler and added 4 coprogram
+functions to it. Then I started the scheduler. The scheduler will
+run all the coprogram functions round-robin style.
 
 ### Sample program output
 

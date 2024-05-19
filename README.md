@@ -11,3 +11,5 @@ My solutions to Parallel Programming and Distributed Systems (PPDS) tasks at the
 4. Parallel matrix multiplication. - [branch 04](https://github.com/SamuelSirota/Sirota-111617-PPDS2024/tree/04)
 5. Parallel samplesort algorithm. - [branch 05](https://github.com/SamuelSirota/Sirota-111617-PPDS2024/tree/05)
 6. Scheduler for coroutines using enhanced generators. - [branch 11](https://github.com/SamuelSirota/Sirota-111617-PPDS2024/tree/11)
+7. Scheduler
+8. Semestral project - Parallel PageRank algorithm. - [branch sz](https://github.com/SamuelSirota/Sirota-111617-PPDS2024/tree/sz)

@@ -53,12 +53,12 @@ for _ in range(max_iterations):
         pagerank = total_pagerank_new
 ```
 
-I calculate the sum of the (page ranks of the nodes that are connected devided by number of incoming edges) to the current node and then update the page rank of the current node. I also multiply the page rank by the damping factor and add the (1 - damping factor) / number of nodes. I then reduce the page ranks of all nodes to the root node.
+I calculate the sum of the (page ranks of the nodes that are connected devided by number of incoming edges) to the current node and then update the page rank of the current node. I also multiply the page rank by the damping factor and add the (1 - damping factor) / number of nodes. Then I reduce the page ranks of all nodes to the root node.
 I repeat this process for the number of iterations specified.
 
 ## Results
 
-Here are the results of the parallel page rank algorithm for different numbers of nodes:
+Here are the results of the parallel page rank algorithm for different numbers of nodes. I used damping factor of 0.85 and 1000 iterations. The graph I used is a simple circular graph with 50 vertices, 51 edges connected one by one and 1 random edge. Here are the results:
 
 | Number of Nodes | Time (seconds) |
 |-----------------|----------------|
@@ -70,4 +70,4 @@ Here are the results of the parallel page rank algorithm for different numbers o
 ![comparison plot](./scatter_plot.png)
 
 As you can see, the time decreases as the number of nodes increases. This is because the work is distributed among the nodes and they can work in parallel. The time is not linearly decreasing because of the overhead of communication between the nodes.
-Times between the 3 and 4 nodd case are very similar sometimes the time for 3 nodes is even lower than for 4 nodes. But with big enough test cases the time for 4 nodes should be lower than for 3 nodes.
+Times between the 3 and 4 node case are very similar sometimes the time for 3 nodes is even lower than for 4 nodes. But with big enough test cases the time for 4 nodes should be lower than for 3 nodes.

@@ -58,7 +58,11 @@ I repeat this process for the number of iterations specified.
 
 ## Results
 
-Here are the results of the parallel page rank algorithm for different numbers of nodes. I used damping factor of 0.85 and 1000 iterations. The graph I used is a simple circular graph with 50 vertices, 51 edges connected one by one and 1 random edge. Here are the results:
+Here are the results of the parallel page rank algorithm for different numbers of nodes.
+I am using graph from the `kruznica.txt` file.
+I used damping factor of 0.85 and 1000 iterations.
+The graph I used is a simple circular graph with 50 vertices,
+51 edges connected one by one and 1 random edge. Here are the results:
 
 | Number of Nodes | Time (seconds) |
 |-----------------|----------------|

@@ -38,7 +38,7 @@ async def task(name, work_queue):
             async with session.get(url) as response:
                 file_size = int(response.headers.get("Content-Length", 0))
                 with open(file_name, "wb") as file, tqdm(
-                    desc=f"Task {name} saving file: {url}",
+                    desc=f"Task {name}: {url}",
                     total=file_size,
                     colour="#136680",
                     unit="B",
@@ -66,8 +66,8 @@ async def main():
     work_queue = asyncio.Queue()
 
     for url in [
-        "https://ploszek.com/ppds/2024-01.uvod_do_paralelnych_a_distribuovanych_vypoctov.pdf",
-        "https://ploszek.com/ppds/2024-02.mutex%20multiplex%20randezvouse%20bariera.pdf",
+        "https://ploszek.com/ppds/2024-06.Paralelne_vypocty_3.pdf",
+        "https://ploszek.com/ppds/2024-11.async.pdf",
     ]:
         await work_queue.put(url)
     time_start = time.perf_counter()

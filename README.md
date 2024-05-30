@@ -5,8 +5,8 @@
 
 ## Description
 
-This is a simple Python program that uses python libraries asyncio
-and aiohttp to download files from a list of URLs.
+This is a simple Python program that uses python libraries `asyncio`
+and `aiohttp` to download files from a list of URLs.
 It also uses the `tqdm` library to display a progress bar.
 
 ---
